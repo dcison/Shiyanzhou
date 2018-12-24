@@ -1,0 +1,47 @@
+{
+  "name": "shiyanzhou",
+  "version": "0.0.1",
+  "description": "back",
+  "main": "index.js",
+  "repository": "git@github.com:dcison/Shiyanzhou.git",
+  "author": "Dcison",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon run ./index.js"
+  },
+  "dependencies": {
+    "koa": "^2.6.2",
+    "koa-bodyparser": "^4.2.1",
+    "koa-compress": "^3.0.0",
+    "koa-favicon": "^2.0.1",
+    "koa-router": "^7.4.0",
+    "koa-session": "^5.10.0",
+    "koa-static": "^5.0.0",
+    "lodash": "^4.17.11",
+    "log4js": "^3.0.6",
+    "md5": "^2.2.1",
+    "moment": "^2.22.2",
+    "mongoose": "^5.3.13",
+    "node-fetch": "^2.3.0",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^5.9.0",
+    "husky": "^1.2.0",
+    "koa2-cors": "^2.0.6",
+    "lint-staged": "^8.1.0",
+    "nodemon": "^1.18.6"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "sh ./eslint.sh",
+      "git add"
+    ]
+  }
+}
