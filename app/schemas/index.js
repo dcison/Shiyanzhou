@@ -1,8 +1,11 @@
 // 集中所有schemas 导出给model
 
 const Error = require('./error');
-const Save = require('./save');
+const Login = require('./login');
+const Money = require('./money');
+
 module.exports = {
     Error: Error,
-    Save
+    Login,
+    Money
 };
