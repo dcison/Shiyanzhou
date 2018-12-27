@@ -3,11 +3,13 @@ const mongoose = require('mongoose');
 const {
     Error,
     Login,
-    Money
+    Money,
+    Record
 } = require('../schemas/index');
 
 module.exports = {
     _Error: mongoose.model('Error', Error),
     Login: mongoose.model('Login', Login),
     Money: mongoose.model('Money', Money),
+    Record: mongoose.model('Record', Record)
 };
