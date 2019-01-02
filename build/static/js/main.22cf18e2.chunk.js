@@ -29,9 +29,9 @@
                         case"user":a.setState({userName: e.target.value});break;case"pass":a.setState({usrPass: e.target.value});break;case"passconfirm":a.setState({confirmPass: e.target.value});break;default:return;
                     }
                 }, a.handleSendServer=function(e) {
-                    var t=a.state,
+                    var t=a.state, 
                         n=t.userName,
-                        l=t.usrPass,
+                        l=t.usrPass, 
                         r=t.confirmPass;if("r"===e) {
                         if(""===n||""===l||""===r) {
                             return void p.a.warning("\u8bf7\u786e\u8ba4\u6240\u6709\u4fe1\u606f\u5df2\u586b\u5199", .5);
@@ -52,10 +52,10 @@
                 var e=sessionStorage.getItem("premission");e&&e.length>0&&this.props.history.replace("/form");
             }}, {key: "render", value: function() {
                 var e=this, 
-                    t=this.state, 
-                    a=t.userName, 
+                    t=this.state,
+                    a=t.userName,
                     n=t.usrPass,
-                    r=t.confirmPass,
+                    r=t.confirmPass, 
                     o=a?l.a.createElement(f.a, {type: "close-circle", onClick: this.emitEmptyName}):null,
                     s=n?l.a.createElement(f.a, {type: "close-circle", onClick: this.emitEmptyPass}):null, 
                     c=r?l.a.createElement(f.a, {type: "close-circle", onClick: this.emitEmptyPassConfirm}):null;return l.a.createElement("div", {className: "login"}, l.a.createElement("h2", null, "\u7535\u4fe1\u8ba1\u8d39\u4e0e\u67e5\u8be2\u7cfb\u7edf"), l.a.createElement("div", {className: "loginForm"}, l.a.createElement(g.a, {placeholder: "\u8bf7\u8f93\u5165\u7528\u6237\u540d", prefix: l.a.createElement(f.a, {type: "user", style: {color: "rgba(0,0,0,.25)"}}), suffix: o, value: a, onChange: function(t) {
@@ -80,23 +80,26 @@
                     return e.handleJudgeRegister(!0);
                 }}, "\u6ce8\u518c"))));
             }}]), t;
-        }(n.Component))),
-        E=a(360),
+        }(n.Component))), 
+        E=a(360), 
         C=a(862), 
-        S=a(864),
-        v=a(866), 
+        S=a(864), 
+        v=a(866),
         T=a(863),
         k=(a(413), a(347)), 
-        M=a.n(k), 
+        M=a.n(k),
         O=(function(e) {
             function t() {
                 var e, a;Object(s.a)(this, t);for(var n=arguments.length, l=new Array(n), r=0;r<n;r++) {
                     l[r]=arguments[r];
                 }return(a=Object(i.a)(this, (e=Object(u.a)(t)).call.apply(e, [this].concat(l)))).getOtion=function() {
-                    var e=Object.keys(a.props.mcount),
-                        t=[],
+                    var e=Object.keys(a.props.mcount), 
+                        t=[], 
                         n=[],
-                        l=[];return e.forEach(function(e) {
+                        l=[];return(e=e.filter(function(e) {
+                        var t=parseInt(e),
+                            a=(new Date).getMonth()+1;return 2===a?2===t||1===t||12===t:1===a?1===t||12===t||11===t:1!==a&&2!==a&&(t===a||t===a-1||t===a-2);
+                    })).forEach(function(e) {
                         t.push(parseFloat(a.props.gcount[e]).toFixed(2)), l.push(parseFloat(a.props.lcount[e]).toFixed(2)), n.push(parseFloat(a.props.mcount[e]).toFixed(2));
                     }), {tooltip: {trigger: "axis"}, calculable: !0, xAxis: {type: "category", data: e=e.map(function(e) {
                         return e+"\u6708";
@@ -106,11 +109,11 @@
                 return l.a.createElement(l.a.Fragment, null, l.a.createElement(M.a, {option: this.getOtion(), style: {height: "400px", width: "500px"}}));
             }}]), t;
         }(l.a.Component)),
-        j=T.a.Column,
-        x=T.a.ColumnGroup, 
+        j=T.a.Column, 
+        x=T.a.ColumnGroup,
         w={},
-        N={}, 
-        P={},
+        N={},
+        P={}, 
         U=(function(e) {
             function t(e) {
                 var a;return Object(s.a)(this, t), (a=Object(i.a)(this, Object(u.a)(t).call(this, e))).formmatData=function(e, t) {
@@ -121,8 +124,8 @@
                     }var n=t.global, 
                         l=t.local,
                         r=t.message, 
-                        o=(new Date).getMonth()+1;2===o?(w[1]=0, w[2]=0, w[12]=0, N[1]=0, N[2]=0, N[12]=0, P[1]=0, P[2]=0, P[12]=0):1===o?(w[1]=0, w[12]=0, w[11]=0, N[1]=0, N[12]=0, N[11]=0, P[1]=0, P[12]=0, P[11]=0):(w[o]=0, w[o-1]=0, w[o-2]=0, N[o]=0, N[o-1]=0, N[o-2]=0, P[o]=0, P[o-1]=0, P[o-2]=0);for(var s=[], c=Math.max(e.globalCall.length, e.localCall.length, e.message.length), i=null, u=0;u<c;u++) {
-                        var m={};m.key=u, m.globalStartTime=e.globalCall[u]?e.globalCall[u].start:"-", m.globalEndTime=e.globalCall[u]?e.globalCall[u].end:"-", m.globalTotalTime=e.globalCall[u]?e.globalCall[u].end-e.globalCall[u].start:"-", m.globalMoney=e.globalCall[u]?a.completeMoney(e.globalCall[u].end-e.globalCall[u].start, n)+"\u5143":"-", m.localStartTime=e.localCall[u]?e.localCall[u].start:"-", m.localEndTime=e.localCall[u]?e.localCall[u].end:"-", m.localTotalTime=e.localCall[u]?e.localCall[u].end-e.localCall[u].start:"-", m.localMoney=e.localCall[u]?a.completeMoney(e.localCall[u].end-e.localCall[u].start, l)+"\u5143":"-", m.message=e.message[u]?e.message[u]:"-", m.messageMoney=e.message[u]?r+"\u5143":"-", s.push(m), e.globalCall[u]&&(i=new Date(e.globalCall[u].start), null!==w[i.getMonth()+1]&&(w[i.getMonth()+1]+=a.completeMoney(e.globalCall[u].end-e.globalCall[u].start, n))), e.localCall[u]&&(i=new Date(e.localCall[u].start), null!==N[i.getMonth()+1]&&(N[i.getMonth()+1]+=a.completeMoney(e.localCall[u].end-e.localCall[u].start, l))), e.message[u]&&(i=new Date(e.message[u]), P[i.getMonth()+1]+=r);
+                        o=(new Date).getMonth()+1;2===o?(w[1]=0, w[2]=0, w[12]=0, N[1]=0, N[2]=0, N[12]=0, P[1]=0, P[2]=0, P[12]=0):1===o?(w[1]=0, w[11]=0, w[12]=0, N[1]=0, N[11]=0, N[12]=0, P[1]=0, P[11]=0, P[12]=0):1!==o&&2!==o&&(w[o]=0, w[o-1]=0, w[o-2]=0, N[o]=0, N[o-1]=0, N[o-2]=0, P[o]=0, P[o-1]=0, P[o-2]=0);for(var s=[], c=Math.max(e.globalCall.length, e.localCall.length, e.message.length), i=null, u=0;u<c;u++) {
+                        var m={};m.key=u, m.globalStartTime=e.globalCall[u]?e.globalCall[u].start:"-", m.globalEndTime=e.globalCall[u]?e.globalCall[u].end:"-", m.globalTotalTime=e.globalCall[u]?e.globalCall[u].end-e.globalCall[u].start:"-", m.globalMoney=e.globalCall[u]?a.completeMoney(e.globalCall[u].end-e.globalCall[u].start, n)+"\u5143":"-", m.localStartTime=e.localCall[u]?e.localCall[u].start:"-", m.localEndTime=e.localCall[u]?e.localCall[u].end:"-", m.localTotalTime=e.localCall[u]?e.localCall[u].end-e.localCall[u].start:"-", m.localMoney=e.localCall[u]?a.completeMoney(e.localCall[u].end-e.localCall[u].start, l)+"\u5143":"-", m.message=e.message[u]?e.message[u]:"-", m.messageMoney=e.message[u]?r+"\u5143":"-", s.push(m), e.globalCall[u]&&(i=new Date(e.globalCall[u].start), null!==w[i.getMonth()+1]&&(w[i.getMonth()+1]+=a.completeMoney(e.globalCall[u].end-e.globalCall[u].start, n))), e.localCall[u]&&(i=new Date(e.localCall[u].start), null!==N[i.getMonth()+1]&&(N[i.getMonth()+1]+=a.completeMoney(e.localCall[u].end-e.localCall[u].start, l))), e.message[u]&&(i=new Date(e.message[u]), null!==P[i.getMonth()+1]||P[i.getMonth()+1!==void 0]?P[i.getMonth()+1]+=r:delete P[10]);
                     }return s;
                 }, a.handleCancel=function() {
                     a.setState({showPic: !1});
@@ -133,7 +136,7 @@
                 if("number"!==typeof e) {
                     return"-";
                 }var t=parseInt(e/1e3), 
-                    a=Math.floor(t/60/60/24);t%=86400;var n=Math.floor(t/60/60);t%=3600;var l=Math.floor(t/60), 
+                    a=Math.floor(t/60/60/24);t%=86400;var n=Math.floor(t/60/60);t%=3600;var l=Math.floor(t/60),
                     r=t%=60;return a>0?"".concat(a, "\u5929").concat(n, "\u5c0f\u65f6").concat(l, "\u5206").concat(r, "\u79d2"):0===a&&n>0?"".concat(n, "\u5c0f\u65f6").concat(l, "\u5206").concat(r, "\u79d2"):0===a&&0===n&&l>0?"".concat(l, "\u5206").concat(r, "\u79d2"):0===a&&0===n&&0===l&&r?"".concat(r, "\u79d2"):void 0;
             }}, {key: "completeMoney", value: function(e, t) {
                 return 0===Math.floor(e/1e3/60)?t:t*Math.floor(e/1e3/60);
@@ -180,7 +183,7 @@
         }(l.a.Component)), 
         I=(a(815), a(227)),
         D=a.n(I), 
-        F=g.a.Search,
+        F=g.a.Search, 
         R=(function(e) {
             function t(e) {
                 var a;return Object(s.a)(this, t), (a=Object(i.a)(this, Object(u.a)(t).call(this, e))).handleOk=function() {
@@ -214,7 +217,7 @@
                 }, a.editMoney=function() {
                     var e=a.state.currentMoney,
                         t=e.global, 
-                        n=e.local, 
+                        n=e.local,
                         l=a.state.currentMoney.message;fetch("http://127.0.0.1:5001/setMoney", {method: "POST", headers: {"Content-Type": "application/json"}, body: JSON.stringify({global: 1*t, local: 1*n, message: 1*l})}).then(function(e) {
                         e.json().then(function(e) {
                             200===e.code&&(p.a.success("\u8bdd\u8d39\u8bbe\u5b9a\u6210\u529f", .5), a.setState({setMoney: !1}));
@@ -222,7 +225,7 @@
                     });
                 }, a.handleUpload=function(e) {
                     var t=e.name.substring(e.name.lastIndexOf(".")+1);if("json"===t.toLowerCase()||"txt"===t.toLowerCase()) {
-                        var a=new FileReader,
+                        var a=new FileReader, 
                             n="";a.readAsText(e, "UTF-8"), a.onload=function(e) {
                             n=e.target.result;try{
                                 JSON.parse(n), fetch("http://127.0.0.1:5001/upload", {method: "POST", headers: {"Content-Type": "application/json"}, body: n}).then(function(e) {
@@ -307,4 +310,4 @@
         e.unregister();
     });
 }}, [[362, 2, 1]]]);
-//# sourceMappingURL=main.f1eb0a8d.chunk.js.map
+//# sourceMappingURL=main.22cf18e2.chunk.js.map
